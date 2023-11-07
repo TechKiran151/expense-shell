@@ -1,4 +1,4 @@
-log_file=/temp/expense.log
+log_file="/temp/expense.log"
 color="\e[36m"
 
 echo -e "${color} Disable NodeJS default version \e[0m"
@@ -23,6 +23,10 @@ echo $?
 
 echo -e "${color} Create Application directory \e[0m"
 mkdir /app &>>$log_file
+echo $?
+
+echo -e "${color} delete old Application content \e[0m"
+rm -rf /app/* &>>log_file
 echo $?
 
 echo -e "${color} Download the application content \e[0m"
