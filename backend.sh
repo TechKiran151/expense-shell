@@ -37,7 +37,7 @@ echo -e "${color} Go to the app folder \e[0m"
 cd /app &>>$log_file
 echo $?
 
-echo -e "{color} Extract the file \e[0m "
+echo -e "${color} Extract the file \e[0m "
 unzip /tmp/backend.zip &>>$log_file
 echo $?
 
