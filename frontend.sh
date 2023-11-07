@@ -16,4 +16,4 @@ unzip /tmp/frontend.zip &>>/tmp/expense.log
 
 echo -e "\e[36m Starting Nginx Service \e[0m"
 systemctl enable nginx &>>/tmp/expense.log
-systemctl restart nginx &>>/tmp?expense.log
+systemctl restart nginx &>>/tmp/expense.log
