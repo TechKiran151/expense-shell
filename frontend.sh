@@ -14,6 +14,6 @@ echo -e "\e[36m Extract downloaded application content \e[0m"
 cd /usr/share/nginx/html
 unzip /tmp/frontend.zip
 
-echo -e "\2[36m Starting Nginx Service \e[0m"
+echo -e "\e[36m Starting Nginx Service \e[0m"
 systemctl enable nginx
 systemctl restart nginx
