@@ -1,4 +1,4 @@
-log_file="/temp/expense.log"
+log_file=/temp/expense.log
 color="\e[36m"
 
 echo -e "${color} Disable NodeJS default version \e[0m"
