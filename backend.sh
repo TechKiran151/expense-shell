@@ -41,7 +41,7 @@ echo -e "{color} Extract the file \e[0m "
 unzip /tmp/backend.zip &>>$log_file
 echo $?
 
-echo -e "${color} Download NodeJS dependecies \e[0m"
+echo -e "${color} Download NodeJS dependencies \e[0m"
 npm install &>>$log_file
 echo $?
 
