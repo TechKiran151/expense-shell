@@ -1,7 +1,7 @@
 echo -e "\e[36m Instlling Nginx \e[0m"
 dnf install nginx -y &>>/tmp/expense.log
 
-echo -e "\[36m Copy the expense config file \e[0m"
+echo -e "\e[36m Copy the expense config file \e[0m"
 cp expense.conf /etc/nginx/default.d/expense.conf &>>/tmp/expense.log
 
 echo -e "\e[36m Clean/remove old Nginx content \e[0m"
