@@ -1,6 +1,6 @@
 dnf install nginx -y
 
-cd expense.conf /etc/nginx/default.d/expense.conf
+cp expense.conf /etc/nginx/default.d/expense.conf
 
 rm -rf /usr/share/nginx/html/*
 
