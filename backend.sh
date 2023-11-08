@@ -57,16 +57,17 @@ if [ $? -ne 0 ]; then
     fi
 fi
 
-echo -e "${color} Create Application directory \e[0m"
-mkdir /app &>>$log_file
-#echo $?
-#instead of zero and non zero we can give SUCCESS and FAILUER using if condition
-if [ $? -eq 0 ]; then
-  echo -e "\e[32m SUCCESS \e[0m"
-else
-  echo  -e "\e[31m FAILURE \e[0m"
+if [ ! -d /qpp ]; then
+    echo -e "${color} Create Application directory \e[0m"
+    mkdir /app &>>$log_file
+    #echo $?
+    #instead of zero and non zero we can give SUCCESS and FAILUER using if condition
+    if [ $? -eq 0 ]; then
+      echo -e "\e[32m SUCCESS \e[0m"
+    else
+      echo  -e "\e[31m FAILURE \e[0m"
+    fi
 fi
-
 echo -e "${color} delete old Application content \e[0m"
 rm -rf /app/* &>>log_file
 #echo $?
