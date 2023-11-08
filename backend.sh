@@ -45,7 +45,7 @@ else
 fi
 
 
-id kiran &>>$log_file
+id expense &>>$log_file
 #echo $?
 #instead of zero and non zero we can give SUCCESS and FAILUER using if condition
 if [ $? -ne 0 ]; then
