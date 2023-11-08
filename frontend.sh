@@ -21,6 +21,7 @@
 #------------
 #another way using variable we can customize the code
 #Bellow one is the example
+source common.sh
 log_file=/tmp/expense.log
 color="\e[36m"
 echo -e "${color} Installing Nginx \e[0m"
