@@ -57,7 +57,7 @@ if [ $? -ne 0 ]; then
     fi
 fi
 
-if [ ! -d /qpp ]; then
+if [ ! -d /app ]; then
     echo -e "${color} Create Application directory \e[0m"
     mkdir /app &>>$log_file
     #echo $?
