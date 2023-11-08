@@ -1,6 +1,14 @@
 log_file="/tmp/expense.log"
 color="\e[36m"
 
+#bellow -z means empty if password is empty the display msg like "Password Input Missing" and exit
+if [ -z "$1" ]; then
+  echo Password Input Missing
+  exit
+fi
+
+MYSQL_ROOT_PASSWORD=$1
+
 echo -e "${color} Disable NodeJS default version \e[0m"
 dnf module disable nodejs -y &>>$log_file
 #echo $?
@@ -129,7 +137,8 @@ else
 fi
 
 echo -e "${color} Load Schema \e[0m"
-mysql -h mysql-dev.kiran85.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file
+#mysql -h mysql-dev.kiran85.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file
+mysql -h mysql-dev.kiran85.online -uroot -p${MYSQL_ROOT_PASSWORD} < /app/schema/backend.sql &>>$log_file
 #echo $?
 #instead of zero and non zero we can give SUCCESS and FAILUER using if condition
 if [ $? -eq 0 ]; then
