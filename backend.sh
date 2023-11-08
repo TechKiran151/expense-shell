@@ -1,5 +1,8 @@
-log_file="/tmp/expense.log"
-color="\e[36m"
+#log_file="/tmp/expense.log"
+#color="\e[36m"
+
+#source means import
+source common.sh
 
 #bellow -z means empty if password is empty the display msg like "Password Input Missing" and exit
 if [ -z "$1" ]; then
@@ -9,13 +12,13 @@ fi
 
 MYSQL_ROOT_PASSWORD=$1
 
-status_check(){
-  if [ $? -eq 0 ]; then
-    echo -e "\e[32m SUCCESS \e[0m"
-  else
-    echo  -e "\e[31m FAILURE \e[0m"
-  fi
-}
+#status_check(){
+#  if [ $? -eq 0 ]; then
+#    echo -e "\e[32m SUCCESS \e[0m"
+#  else
+#    echo  -e "\e[31m FAILURE \e[0m"
+#  fi
+#}
 
 echo -e "${color} Disable NodeJS default version \e[0m"
 dnf module disable nodejs -y &>>$log_file
