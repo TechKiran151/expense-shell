@@ -44,14 +44,17 @@ else
   echo  -e "\e[31m FAILURE \e[0m"
 fi
 
-echo -e "${color} Add application user \e[0m"
-useradd expense &>>$log_file
+
+id expense &>>$log_file
 #echo $?
 #instead of zero and non zero we can give SUCCESS and FAILUER using if condition
-if [ $? -eq 0 ]; then
-  echo -e "\e[32m SUCCESS \e[0m"
-else
-  echo  -e "\e[31m FAILURE \e[0m"
+if [ $? -ne 0 ]; then
+    echo -e "${color} Add application user \e[0m"
+    if [ $? -eq 0 ]; then
+      echo -e "\e[32m SUCCESS \e[0m"
+    else
+      echo  -e "\e[31m FAILURE \e[0m"
+    fi
 fi
 
 echo -e "${color} Create Application directory \e[0m"
